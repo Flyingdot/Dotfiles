@@ -1,0 +1,68 @@
+[includeIf "gitdir:~/dev-sc/"]
+	path = .gitconfig-sc
+[includeIf "gitdir:~/dev-sb/"]
+	path = .gitconfig-sb
+[includeIf "gitdir:~/dev/"]
+	path = .gitconfig-flyingdot
+[includeIf "gitdir:~/"]
+	path = .gitconfig-flyingdot
+[push]
+	default = simple
+[mergetool]
+	keepBackup = false
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
+[alias]
+	orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -d ' ' -f 1`
+	today = !git log --since=00:00:00 --all --no-merges --oneline --author=dani.meier@swisscom.com
+	co = checkout
+	ec = config --global -e
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cob = checkout -b
+	c = !git add -A && git commit
+	cm = !git add -A && git commit -m
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	wip = !git add -u && git commit -m "WIP" 
+	undo = reset HEAD~1 --mixed
+	amend = commit -a --amend
+	amendpush = !git commit -a --amend --no-edit && git push -f
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+	lol = log --oneline
+	l = !git log --oneline -10 
+	upco = !git co develop && git up
+	last = log -1 --stat
+	cp = cherry-pick
+	cl = clone
+	ci = commit
+	st = status -sb
+	br = branch
+	unstage = reset HEAD --
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+[core]
+	autocrlf = input
+	trustctime = false
+	editor = vim
+	filemode = false
+[credential]
+	helper = wincred
+[log]
+	date = relative
+[format]
+	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[gui]
+	recentrepo = D:/dev/mycustomer
+[color]
+	ui = true
+[diff]
+	tool = bc3
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	trustExitCode = true
+[init]
+	templatedir = /Users/dani/.git-templates
