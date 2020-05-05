@@ -57,6 +57,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty
 
+# printscreen
+bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+bindsym --release $mod+Print exec scrot -se 'mv $f /tmp/ && gimp /tmp/$f'
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
