@@ -1,6 +1,6 @@
 configuration {
-	modi: "window,drun,combi,ssh";
+	modi: "window,combi,ssh,drun,run";
 	theme: "solarized";
-	combi-modi: "window,drun,ssh";
+	combi-modi: "window,ssh,drun,run";
 }
 

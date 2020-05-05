@@ -7,7 +7,8 @@ xrdb -merge ~/.Xresources
 setxkbmap -layout us -variant altgr-intl
 
 # Variables
-export PATH=$PATH:/bin/snap
+export PATH=$PATH:/var/lib/snapd/desktop/applications
+export XDG_DATA-DIRS=$XDG_DATA_DIRS:/var/lib/snapd/desktop/applications
 
 exec /bin/i3
 
