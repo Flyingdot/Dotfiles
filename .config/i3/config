@@ -21,6 +21,8 @@ font pango:DejaVu Sans Mono 8
 
 # startup
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/Wallpaper/wallpaper.jpg --head=0
+exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/Wallpaper/wallpaper.jpg --head=1
 exec --no-startup-id compton --config ~/.compton.conf
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -37,6 +39,10 @@ exec --no-startup-id blueman-applet
 
 # gaps
 for_window [class=".*"] border pixel 0
+
+# window-configurations
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
