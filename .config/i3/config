@@ -199,7 +199,7 @@ bindsym $mod+Shift+t exec $alacritty_colorscheme -T
 bindsym $mod+Shift+m exec notify-send "Alacritty Colorscheme" `$alacritty_colorscheme -s`
 
 # gaps
-gaps inner 20
+gaps inner 10
 smart_gaps on
 
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
