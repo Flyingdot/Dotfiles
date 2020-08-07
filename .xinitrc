@@ -12,3 +12,7 @@ export XDG_DATA-DIRS=$XDG_DATA_DIRS:/var/lib/snapd/desktop/applications
 
 exec /bin/i3
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
+
