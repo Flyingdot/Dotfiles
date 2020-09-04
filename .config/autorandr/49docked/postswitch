@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# dpi
+sed -i -e 's/192/108/g' /home/dani/.Xresources
+xrdb -merge /home/dani/.Xresources
+source /home/dani/.config/autorandr/postswitch
