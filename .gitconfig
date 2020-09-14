@@ -34,6 +34,7 @@
 	lol = log --oneline
 	l = !git log --oneline -10 
 	upco = !git co develop && git up
+	upcom = !git co master && git up
 	last = log -1 --stat
 	cp = cherry-pick
 	cl = clone
