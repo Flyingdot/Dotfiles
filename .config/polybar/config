@@ -35,6 +35,7 @@ height = 35
 ;offset-y = 1%
 radius = 0.0
 fixed-center = false
+dpi = 108
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -161,7 +162,7 @@ label-visible-padding = ${self.label-focused-padding}
 strip-wsnumbers = true
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -423,3 +424,4 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
