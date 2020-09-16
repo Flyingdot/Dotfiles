@@ -2,5 +2,6 @@
 
 # dpi
 sed -i -e 's/192/108/g' /home/dani/.Xresources
+sed -i -e 's/192/108/g' /home/dani/.config/polybar/config
 xrdb -merge /home/dani/.Xresources
 source /home/dani/.config/autorandr/postswitch
