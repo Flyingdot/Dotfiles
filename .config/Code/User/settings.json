@@ -1,0 +1,34 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 20,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.menuBarVisibility": "toggle",
+    "explorer.confirmDragAndDrop": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.colorTheme": "GitHub Dark",
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0,
+    "editor.smoothScrolling": true,
+    "editor.lineNumbers": "relative",
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.useSystemClipboard": true,
+    "vim.easymotionMarkerBackgroundColor": "red"
+}

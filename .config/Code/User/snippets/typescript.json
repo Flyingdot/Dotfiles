@@ -1,0 +1,34 @@
+{
+
+	"jest-describe": {
+		"prefix": "j-describe",
+		"body": [
+			"describe('$1', () => {",
+				"\t$0",
+			"});"
+		]
+	},
+	"jest-it": {
+		"prefix": "j-it",
+		"body": [
+			"it('should $1', () => {",
+				"\t$0",
+			"});"
+		]
+	},
+	"jest-beforeEach": {
+		"prefix": "j-beforeEach",
+		"body": [
+			"beforeEach(() => {",
+				"\t$0",
+			"});"
+		]
+	},
+	"console-log": {
+		"prefix": "cl",
+		"body": [
+			"// tslint:disable-next-line:no-console",
+			"console.log({ $0 });"
+		]
+	}
+}
