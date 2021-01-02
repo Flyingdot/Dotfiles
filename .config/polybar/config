@@ -27,9 +27,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/dp0]
-inherit = bar/main
-monitor = DP-0
+[bar/main]
+;monitor = DP-0
 
 modules-left = i3
 
@@ -37,14 +36,9 @@ tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-[bar/dp1]
-inherit = bar/main
-monitor = DP-1
-
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 modules-center = mpd
 
-[bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 35
@@ -52,7 +46,7 @@ height = 35
 ;offset-y = 1%
 radius = 0.0
 fixed-center = false
-dpi = 108
+dpi = 192
 
 background = ${colors.background}
 foreground = ${colors.foreground}
