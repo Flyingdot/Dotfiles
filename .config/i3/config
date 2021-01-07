@@ -52,6 +52,14 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# brightness
+bindsym --release XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym --release XF86MonBrightnessDown exec xbacklight -dec 10
+
 # printscreen
 bindsym Print exec scrot -e 'mv $f /tmp/ && nomacs /tmp/$f'
 bindsym --release $mod+Print exec scrot -se 'mv $f /tmp/ && nomacs /tmp/$f'
