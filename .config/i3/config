@@ -31,7 +31,7 @@ exec --no-startup-id /usr/bin/dropbox
 exec --no-startup-id /usr/bin/dunst
 
 # gaps
-for_window [class=".*"] border pixel 0
+for_window [class="^.*"] border pixel 5
 for_window [class="VirtualBox Machine"] border normal
 
 # window-configurations
@@ -103,11 +103,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+Shift+% split h
-
-# split in vertical orientation
-bindsym $mod+Shift+" split v
+# split 
+bindsym $mod+Alt+h split h
+bindsym $mod+Alt+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -195,6 +193,11 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# class                 border  bg      text    indic.  child_border
+client.focused_inactive #0d1010 #212121 #d9d9d9 #0d1010 #063340
+client.unfocused        #0d1010 #212121 #d9d9d9 #424242 #292929
+client.focused          #57c7ff #57c7ff #000000 #57c7ff #57c7ff
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
