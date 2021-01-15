@@ -136,32 +136,31 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: sc"
 set $ws10 "10"
-set $mon_49_1 DP-0
-set $mon_49_2 DP-1
+#set $mon_49_1 DP-0
+#set $mon_49_2 DP-1
 
 #
 # fixed workspace assignments
 #   ws1
-workspace $ws1 output $mon_49_1
+#workspace $ws1 output $mon_49_1
 assign [class="[m|M]icrosoft [t|T]eams.*"] $ws1
-assign [class="s|Slack"] $ws1
+assign [class="[s|S]lack"] $ws1
 
 #   ws2
-workspace $ws2 output $mon_49_2
+#workspace $ws2 output $mon_49_2
 assign [class=".*chrome"] $ws2
-assign [class="[b|B]rave.*"] $ws2
 
 #   ws3
-workspace $ws3 output $mon_49_2
+#workspace $ws3 output $mon_49_2
 assign [class="Alacritty"] $ws3
 for_window [class="Alacritty"] focus
 
 #   ws4
-workspace $ws4 output $mon_49_1
+#workspace $ws4 output $mon_49_1
 assign [class="[c|C]ode"] $ws4
 for_window [class="[c|C]ode"] focus
-assign [class="jetbrains-rider"] $ws4
-for_window [class="jetbrains-rider"] focus
+assign [class=".*[r|R]ider.*"] $ws4
+for_window [class=".*[r|R]ider.*"] focus
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
