@@ -32,6 +32,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dag/vim-fish'
 
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'herringtondarkholme/yats.vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
 call plug#end()
 
 let mapleader = " " 
@@ -46,5 +50,6 @@ map <C-l> <C-w>l
 
 " Plugins
 nmap <C-P> :FZF<CR>
+nmap <leader>i :CocCommand tsserver.organizeImports<CR>
 
 colorscheme nord
