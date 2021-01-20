@@ -32,9 +32,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dag/vim-fish'
 
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-json',
+    \ 'coc-css',
+    \ 'coc-html',
+    \ 'coc-prettier'
+    \ ]
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'herringtondarkholme/yats.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -51,5 +60,6 @@ map <C-l> <C-w>l
 " Plugins
 nmap <C-P> :FZF<CR>
 nmap <leader>i :CocCommand tsserver.organizeImports<CR>
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 colorscheme nord
