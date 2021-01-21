@@ -16,13 +16,14 @@ set nowrap
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-" set termguicolors
+set termguicolors
 set scrolloff=8
 set clipboard+=unnamedplus
 set ttimeout
 set ttimeoutlen=100
 set timeoutlen=3000
 set signcolumn=yes
+set mouse=a
 
 " Plugins
 call plug#begin()
@@ -61,5 +62,10 @@ map <C-l> <C-w>l
 nmap <C-P> :FZF<CR>
 nmap <leader>i :CocCommand tsserver.organizeImports<CR>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+nmap <silent> gd <Plug>(coc-definition)
+nmap <slient> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 colorscheme nord
+highlight Comment cterm=italic gui=italic
