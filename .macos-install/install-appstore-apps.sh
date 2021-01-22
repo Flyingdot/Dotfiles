@@ -1,12 +1,15 @@
 #!/bin/sh
 
+# install mas
+brew install mas
+
 # get Apple ID
-echo ""
-echo "Enter AppleID to signin to Mac App Store:"
-read -p "  AppleID (john@foo.com): " APPLEID
+# echo "Enter AppleID to signin to Mac App Store:"
+# read -p "  AppleID (john@foo.com): " APPLEID
 
 # make sure signed into Mac App Store
-mas signin $APPLEID
+# mas signin $APPLEID
+# !!! https://github.com/mas-cli/mas/issues/164
 
 # install macos apps
 mas install 882812218 # Owly 
