@@ -61,8 +61,8 @@ bindsym --release XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym --release XF86MonBrightnessDown exec xbacklight -dec 10
 
 # printscreen
-bindsym Print exec scrot -e 'mv $f /tmp/ && nomacs /tmp/$f'
-bindsym --release $mod+Print exec scrot -se 'mv $f /tmp/ && nomacs /tmp/$f'
+bindsym Print exec flameshot 
+bindsym --release $mod+Print exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
