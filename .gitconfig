@@ -4,8 +4,6 @@
 	path = .gitconfig-sb
 [includeIf "gitdir:~/dev/"]
 	path = .gitconfig-flyingdot
-[includeIf "gitdir:~/"]
-	path = .gitconfig-flyingdot
 [push]
 	default = simple
 [mergetool]
@@ -33,8 +31,9 @@
 	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
 	lol = log --oneline
 	l = !git log --oneline -10 
+	ll = !git log --oneline -30
 	upco = !git co develop && git up
-	upcom = !git co master && git up
+	upcom = !git co main && git up
 	last = log -1 --stat
 	cp = cherry-pick
 	cl = clone
@@ -45,6 +44,7 @@
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 [core]
+	commentChar = `
 	autocrlf = input
 	trustctime = false
 	editor = vim
@@ -53,8 +53,6 @@
 	helper = wincred
 [log]
 	date = relative
-[format]
-	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [gui]
 	recentrepo = D:/dev/mycustomer
 [color]
@@ -67,3 +65,8 @@
 	trustExitCode = true
 [init]
 	templatedir = /Users/dani/.git-templates
+[rerere]
+	enabled = true
+[user]
+	name = Daniel Meier
+	email = dani.meier@gmail.com
