@@ -67,6 +67,3 @@
 	templatedir = /Users/dani/.git-templates
 [rerere]
 	enabled = true
-[user]
-	name = Daniel Meier
-	email = dani.meier@gmail.com
