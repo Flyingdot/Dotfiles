@@ -45,6 +45,7 @@ brew install keycastr
 brew install powershell
 brew install slack
 brew install sublime-text
+brew install sublime-merge
 brew install visual-studio-code
 brew install eotion
 brew install google-chrome
