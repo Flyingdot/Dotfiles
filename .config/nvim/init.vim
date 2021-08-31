@@ -66,6 +66,8 @@ Plug 'vim-scripts/PreserveNoEOL'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " themes
 Plug 'folke/tokyonight.nvim'
@@ -218,3 +220,6 @@ colorscheme tokyonight
 " highlight Comment cterm=italic gui=italic
 
 autocmd FileType javascript.jsx.tsx setlocal commentstring={/*\ %s\ */}
+
+let g:airline_theme='simple'
+
