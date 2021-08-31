@@ -150,11 +150,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <silent> rn <Plug>(coc-rename)
 
 " CodeActions
-nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>qc  <Plug>(coc-codeaction)
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -201,18 +201,14 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Statusline
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+inoremap <expr> <c-j> pumvisible() ? "\<C-n>" : coc#refresh()
+inoremap <expr> <c-k> pumvisible() ? "\<C-p>" : coc#refresh()
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:user_emmet_leader_key='<C-Z>'
-
-
 
 " Visuals
 " ---------
