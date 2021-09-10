@@ -67,7 +67,7 @@ Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 
 " themes
 Plug 'folke/tokyonight.nvim'
