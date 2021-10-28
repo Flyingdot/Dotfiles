@@ -68,6 +68,8 @@ Plug 'mattn/emmet-vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'APZelos/blamer.nvim'
 
 " themes
 Plug 'folke/tokyonight.nvim'
@@ -205,12 +207,15 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 inoremap <expr> <c-j> pumvisible() ? "\<C-n>" : coc#refresh()
 inoremap <expr> <c-k> pumvisible() ? "\<C-p>" : coc#refresh()
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:user_emmet_leader_key='<C-Z>'
+
+" which-keyu
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+set timeoutlen=300
 
 " Visuals
 " ---------
@@ -221,5 +226,5 @@ colorscheme tokyonight
 
 autocmd FileType javascript.jsx.tsx setlocal commentstring={/*\ %s\ */}
 
-let g:airline_theme='simple'
+" let g:airline_theme='simple'
 

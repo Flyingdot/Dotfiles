@@ -67,3 +67,5 @@
 	templatedir = /Users/dani/.git-templates
 [rerere]
 	enabled = true
+[difftool "bc3"]
+	trustExitCode = true
