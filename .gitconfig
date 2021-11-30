@@ -2,6 +2,8 @@
 	path = .gitconfig-sc
 [includeIf "gitdir:~/dev-sb/"]
 	path = .gitconfig-sb
+[includeIf "gitdir:~/dev-kp/"]
+	path = .gitconfig-kp
 [includeIf "gitdir:~/dev/"]
 	path = .gitconfig-flyingdot
 [push]
@@ -65,6 +67,7 @@
 	trustExitCode = true
 [init]
 	templatedir = /Users/dani/.git-templates
+	defaultBranch = main
 [rerere]
 	enabled = true
 [difftool "bc3"]

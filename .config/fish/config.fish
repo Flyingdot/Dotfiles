@@ -3,6 +3,8 @@ starship init fish | source
 set -gx TERM xterm-256color 
 fish_vi_key_bindings
 
+figlet Snapbean | lolcat
+
 # env
 set PATH /Users/dani/.dotnet/tools /Users/dani/.local/bin $PATH 
 set -gx EDITOR nvim 

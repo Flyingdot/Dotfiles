@@ -30,6 +30,8 @@ set signcolumn=yes
 set mouse=a
 set updatetime=300
 
+let mapleader = " " 
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -67,9 +69,10 @@ Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'APZelos/blamer.nvim'
+
+source ~/.config/nvim/plugins/fugitive.vim
 
 " themes
 Plug 'folke/tokyonight.nvim'
@@ -78,7 +81,6 @@ call plug#end()
 
 let g:prettier#autoformat = 1
 
-let mapleader = " " 
 nnoremap <leader>e :e $MYVIMRC<CR>
 source $HOME/.config/nvim/keys/which-key.vim
 nnoremap <leader>s :source $MYVIMRC<CR>
