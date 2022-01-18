@@ -45,34 +45,19 @@ endif
 " --------
 call plug#begin()
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'dag/vim-fish'
+source ~/.config/nvim/plugins/auto-pairs.vim
+source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/editorconfig-vim.vim
+source ~/.config/nvim/plugins/fugitive.vim
+source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/vim-commentary.vim
+source ~/.config/nvim/plugins/vim-jsx-pretty.vim
+source ~/.config/nvim/plugins/omnisharp-vim.vim
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-let g:coc_global_extensions = [
-    \ 'coc-tsserver',
-    \ 'coc-json',
-    \ 'coc-css',
-    \ 'coc-html',
-    \ 'coc-prettier',
-    \ 'coc-eslint',
-    \ 'coc-omnisharp'
-    \ ]
-Plug 'maxmellon/vim-jsx-pretty'
+" check need
 Plug 'herringtondarkholme/yats.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'liuchengxu/vim-which-key'
 Plug 'vim-scripts/PreserveNoEOL'
 Plug 'alvan/vim-closetag'
-Plug 'mattn/emmet-vim'
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-commentary'
-Plug 'APZelos/blamer.nvim'
-
-source ~/.config/nvim/plugins/fugitive.vim
 
 " themes
 Plug 'folke/tokyonight.nvim'
