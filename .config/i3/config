@@ -52,8 +52,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# apps
 bindsym $mod+Return exec kitty
+bindsym Print exec flameshot full
+bindsym $mod+Print exec flameshot gui
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -61,10 +63,6 @@ bindsym $mod+f fullscreen toggle
 # brightness
 bindsym --release XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym --release XF86MonBrightnessDown exec xbacklight -dec 10
-
-# printscreen
-bindsym Print exec flameshot 
-bindsym --release $mod+Print exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
