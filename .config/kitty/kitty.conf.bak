@@ -1367,6 +1367,6 @@ macos_option_as_alt left
 
 
 # BEGIN_KITTY_THEME
-# 3024 Night
+# 3024 Day
 include current-theme.conf
 # END_KITTY_THEME

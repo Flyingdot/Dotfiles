@@ -3,6 +3,7 @@
 curl -L https://raw.githubusercontent.com/flyingdot/dotfiles/master/.macos-install/install-apps.sh | sh
 curl -L https://raw.githubusercontent.com/flyingdot/dotfiles/master/.macos-install/install-appstore-apps.sh | sh
 curl -L https://raw.githubusercontent.com/flyingdot/dotfiles/master/.macos-install/dotfiles.sh | sh
+curl -L https://raw.githubusercontent.com/flyingdot/dotfiles/master/.macos-install/kitty.sh | sh
 curl -L https://raw.githubusercontent.com/flyingdot/dotfiles/master/.macos-install/vim.sh | sh
 
 # Configuration
