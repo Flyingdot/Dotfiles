@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 eval "$(starship init bash)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # alias
 alias ls='ls --color=auto'
