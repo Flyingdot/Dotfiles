@@ -8,6 +8,7 @@
 	path = .gitconfig-flyingdot
 [push]
 	default = simple
+	autoSetupRemote = true
 [mergetool]
 	keepBackup = false
 	keeptemporaries = false
