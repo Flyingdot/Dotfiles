@@ -20,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 require("flyingdot")
 
 require('lazy').setup({
-	{ 'folke/tokyonight.nvim' },
 	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
 	{
@@ -49,7 +48,6 @@ require('lazy').setup({
 
 -- Set colorscheme
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('catppuccin')
 
 ---
 -- LSP setup
@@ -100,6 +98,13 @@ require('mason-lspconfig').setup({
 ---
 local cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<Tab>'] = cmp_action.luasnip_supertab(),
+    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+  })
+})
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
