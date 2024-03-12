@@ -45,3 +45,6 @@ complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# zoxide
+zoxide init --cmd cd fish | source
