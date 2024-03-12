@@ -1,10 +1,8 @@
-[includeIf "gitdir:~/dev-sc/"]
-	path = .gitconfig-sc
 [includeIf "gitdir:~/dev-sb/"]
 	path = .gitconfig-sb
-[includeIf "gitdir:~/dev-kp/"]
-	path = .gitconfig-kp
 [includeIf "gitdir:~/dev/"]
+	path = .gitconfig-flyingdot
+[includeIf "gitdir:~/"]
 	path = .gitconfig-flyingdot
 [push]
 	default = simple
@@ -73,3 +71,9 @@
 	enabled = true
 [difftool "bc3"]
 	trustExitCode = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
