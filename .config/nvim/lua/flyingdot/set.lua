@@ -1,29 +1,35 @@
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.cmd("let g:netrw_liststyle = 3")
+
+-- linenumbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- general
+vim.opt.termguicolors = true
 vim.o.mouse = "a"
-vim.o.clipboard = "unnamedplus"
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
+vim.o.clipboard = "unnamedplus" -- use system clipboard
+vim.opt.cursorline = true -- highlight current line
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-
---vim.opt.updatetime = 50
-
 vim.opt.colorcolumn = "120"
+vim.opt.signcolumn = "yes"
+vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+
+-- tabs & indentation
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.wrap = false
+
+-- search
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- window management
+vim.opt.splitright = true -- split vertical window to the right
+vim.opt.splitbelow = true -- split horizontal window to the bottom
+
