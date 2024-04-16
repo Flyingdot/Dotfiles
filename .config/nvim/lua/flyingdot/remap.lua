@@ -15,3 +15,9 @@ vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current spli
 
 vim.keymap.set("x", "p", "P")
 vim.keymap.set("x", "P", "p")
+
+-- keep cursor in the middle of the screen
+vim.keymap.set("n", "k", "kzz")
+vim.keymap.set("n", "j", "jzz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
