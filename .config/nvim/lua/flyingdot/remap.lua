@@ -12,6 +12,10 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+vim.keymap.set("n", "<M-k>", ":wincmd k<CR>", { desc = "Move to upper split" })
+vim.keymap.set("n", "<M-j>", ":wincmd j<CR>", { desc = "Move to below split" })
+vim.keymap.set("n", "<M-l>", ":wincmd l<CR>", { desc = "Move to right split" })
+vim.keymap.set("n", "<M-h>", ":wincmd h<CR>", { desc = "Move to left split" })
 
 vim.keymap.set("x", "p", "P")
 vim.keymap.set("x", "P", "p")
