@@ -69,8 +69,8 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["tsserver"] = function()
-				lspconfig["tsserver"].setup({
+			["ts_ls"] = function()
+				lspconfig["ts_ls"].setup({
 					init_options = {
 						plugins = {
 							{
