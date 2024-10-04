@@ -1,8 +1,10 @@
+[user]
+    email=me@danimeier.dev
+    name=Dani Meier
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQp83w7NoE8YvydS4yvMsve+Vd0UxaF+rb8H2kpn0Nr 
 [includeIf "gitdir:~/dev-sb/"]
 	path = .gitconfig-sb
 [includeIf "gitdir:~/dev/"]
-	path = .gitconfig-flyingdot
-[includeIf "gitdir:~/"]
 	path = .gitconfig-flyingdot
 [push]
 	default = simple
@@ -21,6 +23,7 @@
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	cob = checkout -b
 	c = !git add -A && git commit
+	ci = commit
 	cm = !git add -A && git commit -m
 	save = !git add -A && git commit -m 'SAVEPOINT'
 	wip = !git add -u && git commit -m "WIP" 
@@ -33,22 +36,19 @@
 	lol = log --oneline
 	l = !git log --oneline -10 
 	ll = !git log --oneline -30
-	upco = !git co develop && git up
+    lm = !git log --format=%B -n 1
+    upco = !git co develop && git up
 	upcom = !git co main && git up
-	last = log -1 --stat
-	cp = cherry-pick
-	cl = clone
-	ci = commit
-	st = status -sb
-	br = branch
-	unstage = reset HEAD --
-	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	last = log -1 --stat
+	st = status -sb
+	unstage = reset HEAD --
+    compare = log --left-right --graph --cherry-pick --oneline
 [core]
 	commentChar = `
 	autocrlf = input
 	trustctime = false
-	editor = vim
+	editor = nvim
 	filemode = false
 [credential]
 	helper = wincred
@@ -77,3 +77,5 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[worktree]
+	guessRemote = true
