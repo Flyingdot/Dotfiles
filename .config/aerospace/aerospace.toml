@@ -85,7 +85,7 @@ ctrl-alt-cmd-f = 'fullscreen'
 alt-e = 'layout tiles horizontal vertical'
 alt-w = 'layout h_accordion'
 alt-s = 'layout v_accordion'
-alt-space = 'layout floating tiling'
+alt-f = 'layout floating tiling'
 
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
