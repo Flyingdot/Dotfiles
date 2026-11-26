@@ -1,59 +1,20 @@
-# Install with: brew bundle --file=~/.macos-install/Brewfile
-# Refresh from the current machine: brew bundle dump --file=- | less  (then merge by hand)
+# Stage 2: everything else. Large downloads (Xcode, Office, Docker), runs unattended.
+# brew bundle --file=~/.macos-install/Brewfile.apps
 
 tap "homebrew/services"
 tap "junian/dotnet"
 
-# --- shell & terminal tools
-brew "atuin"
-brew "bat"
-brew "fd"
-brew "fish"
-brew "fzf"
-brew "htop"
-brew "jq"
-brew "lsd"
-brew "ripgrep"
-brew "starship"
-brew "tldr"
-brew "tree"
-brew "wget"
-brew "yazi"
-brew "zoxide"
-brew "herdr"
-
-# --- git
-brew "gh"
-brew "glab"
-brew "git-delta"
-brew "lazygit"
-brew "tig"
-
-# --- editors & dev
-brew "neovim"
-brew "node"
-brew "nvm"
-brew "python@3.13"
-brew "uv"
-brew "prettierd"
+# --- dev CLIs
 brew "azure-cli"
 brew "create-dmg"
 brew "mkcert"
 brew "opencode"
 brew "stripe-cli"
 brew "supabase"
-
-# --- misc
 brew "ffmpeg"
 brew "gnupg"
-brew "mas"
 
-# --- fonts
-cask "font-jetbrains-mono"
-cask "font-jetbrains-mono-nerd-font"
-
-# --- terminals & editors
-cask "kitty"
+# --- editors & terminals
 cask "cmux"
 cask "visual-studio-code"
 cask "zed"
@@ -71,16 +32,11 @@ cask "microsoft-azure-storage-explorer"
 cask "junian/dotnet/dotnet-sdk@10.0"
 
 # --- system & utilities
-cask "1password"
-cask "1password-cli"
 cask "cleanshot"
-cask "karabiner-elements"
-cask "raycast"
 cask "scroll-reverser"
 cask "tailscale-app"
 
 # --- browsers
-cask "crest-browser"
 cask "firefox"
 cask "google-chrome"
 cask "microsoft-edge"
@@ -100,7 +56,7 @@ cask "sonos"
 cask "spotify"
 cask "vlc"
 
-# --- Mac App Store (sign in to the App Store first)
+# --- Mac App Store
 mas "1Password for Safari", id: 1569813296
 mas "Adobe Lightroom", id: 1451544217
 mas "DaisyDisk", id: 411643860
@@ -110,10 +66,8 @@ mas "Toggl Track", id: 1291898086
 mas "Ulysses", id: 1225570693
 mas "Xcode", id: 497799835
 
-# --- global npm packages (installed into Homebrew's node)
+# --- global npm packages
 npm "@angular/cli"
-npm "pnpm"
-npm "prettier"
 
 # --- VS Code extensions
 vscode "angular.ng-template"

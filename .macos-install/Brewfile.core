@@ -1,0 +1,52 @@
+# Stage 1: what's needed to use the Mac. Installs in a few minutes.
+# brew bundle --file=~/.macos-install/Brewfile.core
+
+# --- shell & terminal tools
+brew "atuin"
+brew "bat"
+brew "fd"
+brew "fish"
+brew "fzf"
+brew "htop"
+brew "jq"
+brew "lsd"
+brew "ripgrep"
+brew "starship"
+brew "tldr"
+brew "tree"
+brew "wget"
+brew "yazi"
+brew "zoxide"
+brew "herdr"
+
+# --- git
+brew "gh"
+brew "glab"
+brew "git-delta"
+brew "lazygit"
+brew "tig"
+
+# --- editor & runtimes
+brew "neovim"
+brew "node"
+brew "nvm"
+brew "python@3.13"
+brew "uv"
+brew "prettierd"
+brew "mas"
+
+# --- fonts
+cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
+
+# --- essentials
+cask "kitty"
+cask "1password"
+cask "1password-cli"
+cask "crest-browser"
+cask "raycast"
+cask "karabiner-elements"
+
+# --- global npm packages (installed into Homebrew's node)
+npm "pnpm"
+npm "prettier"
