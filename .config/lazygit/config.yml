@@ -1,0 +1,4 @@
+gui:
+  language: "pl"
+git:
+  overrideGpg: true

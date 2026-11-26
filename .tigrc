@@ -1,0 +1,77 @@
+# ~/.tigrc – Vim‑style enhancements for tig
+
+# ──────────────────────────────────────────────────
+# Movement (tig already uses j/k by default, these are examples)
+# ──────────────────────────────────────────────────
+bind generic <Ctrl-d> move-half-page-down
+bind generic <Ctrl-u> move-half-page-up
+bind generic <Ctrl-f> move-page-down
+bind generic <Ctrl-b> move-page-up
+bind generic gg move-first-line
+bind generic G move-last-line
+
+# ──────────────────────────────────────────────────
+# View switching (lowercase = safe, common in Vim muscle memory)
+# ──────────────────────────────────────────────────
+bind generic m view-main
+bind generic d view-diff
+bind generic l view-log
+bind generic t view-tree
+bind generic b view-blame
+bind generic r view-refs
+bind generic s view-status
+bind generic y view-stash
+bind generic g view-grep
+bind generic h view-help
+
+# ──────────────────────────────────────────────────
+# Useful shortcuts
+# ──────────────────────────────────────────────────
+# Open commit in your editor (e.g., to view full commit in vim)
+bind generic e      edit
+
+# Copy commit SHA to clipboard (macOS, adjust for Linux with xclip)
+bind generic C      @sh -c "echo -n %(commit) | pbcopy"
+
+# Amend last commit from status view
+bind status  A      !git commit --amend
+
+# Interactive rebase from the selected commit
+bind main    R      !git rebase -i %(commit)^
+
+# Show full file for the commit (great for reviewing history)
+bind main    V      !vim +%(lineno) %(file)
+
+# Reload ~/.tigrc without restarting tig
+bind generic S      :source ~/.tigrc
+
+# ──────────────────────────────────────────────────
+# Search enhancements (Vim‑style already default)
+# ──────────────────────────────────────────────────
+# / and ? already work; n/N for next/prev
+bind search  <Esc>  find-prev      # Escape to go back
+
+# ──────────────────────────────────────────────────
+# Visual tweaks
+# ──────────────────────────────────────────────────
+set line-graphics = utf-8          # Nicer graph lines
+set tab-size = 4
+set ignore-space = at-eol          # Ignore trailing whitespace in diffs
+set commit-order = auto            # Topological when graph enabled
+set diff-context = 3               # Lines of context in diffs
+set refresh-mode = auto            # Auto‑refresh views
+
+# Show relative dates by default
+set main-view = \
+    line-number:no,interval=5 \
+    id:yes \
+    date:relative \
+    author:abbreviated \
+    commit-title:yes,graph,refs,overflow=no
+
+# ──────────────────────────────────────────────────
+# Colors (optional – tig inherits Git colors by default)
+# ──────────────────────────────────────────────────
+color cursor         black  cyan   bold
+color title-focus    white  blue   bold
+color title-blur     white  black

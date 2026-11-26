@@ -1,0 +1,26 @@
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = "14"
+
+window-padding-x = 16
+window-padding-y = 16
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+j=goto_split:down
+
+keybind = ctrl+a>h=new_split:left
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>k=new_split:up
+keybind = ctrl+a>l=new_split:right
+keybind = ctrl+a>f=toggle_split_zoom
+
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+window-save-state = always
+quit-after-last-window-closed = true
+
+keybind = shift+enter=text:\n

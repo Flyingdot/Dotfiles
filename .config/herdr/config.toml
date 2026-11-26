@@ -1,0 +1,96 @@
+onboarding = false
+
+[ui]
+sidebar_width = 44
+sidebar_max_width = 60
+agent_panel_sort = "priority"
+status_indicators = "symbols"
+show_agent_labels_on_pane_borders = true
+tab_bar_right = [{ type = "command", command = "/Users/dani/.config/herdr/plugins/github-installations/herdr-projects-b1278ffb803c/1170-0/checkout/target/release/herdr-projects --root /Users/dani/.herdr-projects needs-you --line", interval_seconds = 15, timeout_seconds = 5 }]
+
+[ui.toast]
+delivery = "system"
+
+[ui.sidebar.agents]
+rows = [["state_icon", { token = "agent", bold = false, dim = false, rules = [{ contains = "​", bold = true }] }, "state_text"], [{ token = "$hp_sub", fg = "#6c6f85", dim = false }]]
+
+[ui.sidebar.spaces]
+rows = [["state_icon", { token = "workspace", rules = [{ contains = "⠀", bold = true }] }], [{ token = "branch", fg = "#179299", dim = false }, "git_status", { token = "$pr", fg = "#38913a", dim = false, rules = [{ contains = "", fg = "#e0404a" }, { contains = "", fg = "#38913a", bold = true }, { contains = "", fg = "#7c7f93" }, { contains = "", fg = "#8a5cf0" }, { contains = "", hide = true }] }]]
+
+[keys]
+# Mirrors ~/.tmux.conf
+prefix = "ctrl+a"
+detach = "prefix+d"
+rename_tab = "prefix+comma"
+reload_config = "prefix+r"
+resize_mode = ""
+
+# bind | split-window -h / bind - split-window -v
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+
+# bind -n M-arrows / M-hjkl select-pane
+focus_pane_left = ["alt+left", "alt+h"]
+focus_pane_right = ["alt+right", "alt+l"]
+focus_pane_up = ["alt+up", "alt+k"]
+focus_pane_down = ["alt+down", "alt+j"]
+
+# bind -r M-hjkl resize-pane 5
+resize_pane_left = "prefix+alt+h"
+resize_pane_right = "prefix+alt+l"
+resize_pane_up = "prefix+alt+k"
+resize_pane_down = "prefix+alt+j"
+
+# bind -n C-S-Left/Right swap-window
+move_tab_previous = "ctrl+shift+left"
+move_tab_next = "ctrl+shift+right"
+
+# bind x kill-pane / bind X kill-window
+close_pane = "prefix+x"
+close_tab = "prefix+shift+x"
+
+[theme]
+name = "catppuccin-latte"
+auto_switch = true
+light_name = "catppuccin-latte"
+dark_name = "catppuccin"
+
+# Latte's overlay greys are too faint on a light background once dimmed
+[theme.custom.light]
+overlay0 = "#7c7f93"
+overlay1 = "#6c6f85"
+subtext0 = "#5c5f77"
+sidebar_bg = "#e6e9ef"
+# Active Space / focused Agent row: blue tint so the selection stands out
+active_row_bg = "#becff0"
+# Navigate-mode cursor row
+selection_bg = "#ccd0da"
+
+[theme.custom.dark]
+sidebar_bg = "#181825"
+active_row_bg = "#343f5a"
+selection_bg = "#313244"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "herdr-projects.open-popup"
+description = "Projects"
+
+# tmux: bind C-y display-popup lazygit
+[[keys.command]]
+key = "prefix+ctrl+y"
+type = "popup"
+command = "lazygit"
+description = "lazygit"
+width = "80%"
+height = "80%"
+
+# tmux: bind C-t display-popup $SHELL
+[[keys.command]]
+key = "prefix+ctrl+t"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "Shell popup"
+width = "80%"
+height = "80%"
