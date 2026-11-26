@@ -65,8 +65,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 step "GitHub login (for private dotfiles)"
 brew list gh >/dev/null 2>&1 || brew install gh
-# gh needs a real terminal for the login flow, so this step bypasses the log
-gh auth status >/dev/null 2>&1 || gh auth login --hostname github.com --git-protocol https --web </dev/tty >/dev/tty 2>&1
+if ! gh auth status >/dev/null 2>&1; then
+  # Non-interactive device flow: gh's interactive prompts break on some terminals
+  # ("could not prompt: unexpected escape sequence from terminal").
+  echo "Paste the one-time code below into the GitHub page that opens (it's already in your clipboard)."
+  open "https://github.com/login/device"
+  gh auth login --hostname github.com --git-protocol https --web --clipboard </dev/null
+fi
 
 echo
 echo "No more questions. The rest runs on its own; log: $LOG"
