@@ -60,6 +60,6 @@ step "Done. Manual steps left:"
 cat <<'EOF'
   - 1Password: sign in, enable the SSH agent (commit signing uses op-ssh-sign)
   - gh auth login / glab auth login / atuin login
-  - Private configs not in this repo: ~/.gitconfig-sb*, ~/.config/tmuxinator, ~/.config/zed
+  - Private configs not in this repo: ~/.gitconfig-sb*, ~/.config/zed
   - Log out and back in (login shell, dark mode)
 EOF

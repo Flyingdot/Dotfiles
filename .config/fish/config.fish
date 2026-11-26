@@ -53,10 +53,6 @@ printf "function gi\n\tcurl -sL https://www.toptal.com/developers/gitignore/api/
 # Keybindings
 fish_vi_key_bindings
 bind -M insert \cf accept-autosuggestion
-# Ctrl-f → run tmux-sessionizer
-bind \cf 'tmux-sessionizer; commandline -f repaint'
-# Alt-h (Esc h) → tmux-sessionizer -s 0
-bind \eh 'tmux-sessionizer -s 0; commandline -f repaint'
 
 #
 # determines search program for fzf, prefer rg
@@ -72,7 +68,6 @@ alias ls "lsd"
 alias dc "docker-compose" 
 alias vim nvim 
 alias cc "clear && fish"
-alias mux tmuxinator
 alias lg lazygit
 
 #
