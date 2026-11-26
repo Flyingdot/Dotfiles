@@ -44,28 +44,28 @@
 	st = status -sb
 	unstage = reset HEAD --
     compare = log --left-right --graph --cherry-pick --oneline
+    scopes = "!f() { git log --format=%s | sed -n 's/.*(\\(.*\\)).*/\\1/p' | sort | uniq; }; f"
 [core]
 	commentChar = `
 	autocrlf = input
 	trustctime = false
 	editor = nvim
 	filemode = false
-[credential]
-	helper = wincred
+	pager = tig
 [log]
 	date = relative
 [gui]
 	recentrepo = D:/dev/mycustomer
 [color]
 	ui = true
+	pager = false
 [diff]
 	tool = bc3
 [merge]
-	tool = bc3
+	tool = meld
 [mergetool "bc3"]
 	trustExitCode = true
 [init]
-	templatedir = /Users/dani/.git-templates
 	defaultBranch = main
 [rerere]
 	enabled = true
@@ -79,3 +79,13 @@
 	gpgsign = true
 [worktree]
 	guessRemote = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	side-by-side = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
