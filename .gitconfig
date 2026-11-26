@@ -60,17 +60,13 @@
 	ui = true
 	pager = false
 [diff]
-	tool = bc3
+	tool = meld
 [merge]
 	tool = meld
-[mergetool "bc3"]
-	trustExitCode = true
 [init]
 	defaultBranch = main
 [rerere]
 	enabled = true
-[difftool "bc3"]
-	trustExitCode = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
