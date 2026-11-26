@@ -64,6 +64,7 @@ end
 #
 # aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config-secret='/usr/bin/git --git-dir=$HOME/.cfg-secret/ --work-tree=$HOME'
 alias ls "lsd" 
 alias dc "docker-compose" 
 alias vim nvim 
