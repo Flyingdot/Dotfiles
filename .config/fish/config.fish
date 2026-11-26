@@ -1,8 +1,18 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/dani/.docker/bin"
+# End of Docker Desktop section.
+
 #
 # env
-set PATH /Users/dani/.dotnet/tools /Users/dani/.local/bin /user/local/bin /Users/dani/bin $PATH 
+set PATH /Users/dani/.dotnet/tools /Users/dani/.local/bin /user/local/bin /Users/dani/bin $HOME/.local/bin $PATH 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 set -gx EDITOR nvim 
+
+# pnpm
+set -gx PNPM_HOME "/Users/dani/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
 
 set fish_greeting 
 starship init fish | source 
@@ -15,6 +25,26 @@ end
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
+# # nvmrc
+# function __use_nvmrc --on-variable PWD --description 'Use .nvmrc if it exists'
+#     # Look for .nvmrc in current directory
+#     if test -f .nvmrc
+#         set -l node_version (nvm version)
+#         set -l nvmrc_version (nvm version (cat .nvmrc))
+#
+#         # If version is not installed, install it
+#         if test $nvmrc_version = "N/A"
+#             nvm install
+#         # If different from current, switch
+#         else if test $nvmrc_version != $node_version
+#             nvm use
+#         end
+#     end
+# end
+#
+# # Run once on startup too
+# __use_nvmrc
+
 # gitignore.io
 printf "function gi\n\tcurl -sL https://www.toptal.com/developers/gitignore/api/\$argv\nend\n" > \
 ~/.config/fish/functions/gi.fish
@@ -23,6 +53,10 @@ printf "function gi\n\tcurl -sL https://www.toptal.com/developers/gitignore/api/
 # Keybindings
 fish_vi_key_bindings
 bind -M insert \cf accept-autosuggestion
+# Ctrl-f → run tmux-sessionizer
+bind \cf 'tmux-sessionizer; commandline -f repaint'
+# Alt-h (Esc h) → tmux-sessionizer -s 0
+bind \eh 'tmux-sessionizer -s 0; commandline -f repaint'
 
 #
 # determines search program for fzf, prefer rg
@@ -79,3 +113,10 @@ end
 
 # Run once at shell start
 __check_nvm
+
+# pnpm
+set -gx PNPM_HOME "/Users/dani/Library/pnpm"
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+  set -gx PATH "$PNPM_HOME/bin" $PATH
+end
+# pnpm end
